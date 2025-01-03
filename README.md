@@ -1,1 +1,1 @@
-# MyPrject
+# MyProject
