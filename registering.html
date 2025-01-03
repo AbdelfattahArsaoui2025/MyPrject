@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <h1 class="form-title">Register for Your Course</h1>
+    <form id="signupForm" class="styled-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="nickname">Nickname</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <label for="course">Select Your Course</label>
+        <select id="course" name="course" required>
+            <option value="computer_science">Computer Science</option>
+            <option value="english">English</option>
+            <option value="german">German</option>
+            <option value="programming">Programming</option>
+        </select>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+            <option value="credit_card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bank_transfer">Bank Transfer</option>
+        </select>
+        <br>
+
+        <button type="submit" class="submit-button">Register Now</button>
+        <br>
+        <br>
+                   <!-- Add Go Back Button -->
+                   <button onclick="goBack()" class="go-back-button">Go Back</button>
+    </form>
+</div>
+</div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            alert('Successfully registered! A confirmation email has been sent to: ' + data.email);
+        });
+
+
+// Redirect to index.html
+function goBack() {
+            window.location.href = 'index.html'; // Ensure this path is correct
+        }
+
+    </script>
+</body>
+</html>
